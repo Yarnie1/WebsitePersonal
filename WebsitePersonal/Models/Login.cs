@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ShopPhone.Models
+namespace WebsitePersonal.Models
 {
     public class Login
     {

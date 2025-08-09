@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ShopPhone.Models
+namespace WebsitePersonal.Models
 {
     public class GioHangChiTietDb
     {
@@ -30,9 +30,9 @@ namespace ShopPhone.Models
         /* ------------ Navigation ------------ */
 
         [ForeignKey(nameof(GioHangDbId))]
-        public GioHangDb? GioHang { get; set; }
+        public GioHangDb GioHang { get; set; }
 
         [ForeignKey(nameof(MaHH))]
-        public HangHoa? HangHoa { get; set; }
+        public HangHoa HangHoa { get; set; }
     }
 }

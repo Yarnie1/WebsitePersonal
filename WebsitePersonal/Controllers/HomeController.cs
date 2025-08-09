@@ -1,12 +1,19 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using ShopPhone.Models;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
+using System.Linq;
 using System.Security.Claims;
+using System.Threading.Tasks;
+using WebsitePersonal.Models;
 
-namespace ShopPhone.Controllers
+namespace WebsitePersonal.Controllers
 {
     public class HomeController : Controller
     {
@@ -163,7 +170,7 @@ namespace ShopPhone.Controllers
         [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, HangHoa hangHoa, IFormFile? Hinh)
+        public async Task<IActionResult> Edit(int id, HangHoa hangHoa, IFormFile Hinh)
         {
             if (id != hangHoa.MaHH)
                 return NotFound();

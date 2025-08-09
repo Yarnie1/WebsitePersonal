@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ShopPhone.Models;
+using WebsitePersonal.Models;
 using System.Security.Claims;
+using System.Linq;
+using System;
 
-namespace ShopPhone.Controllers
+namespace WebsitePersonal.Controllers
 {
     public class ThanhToanController : Controller
     {

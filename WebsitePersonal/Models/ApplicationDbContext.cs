@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using WebsitePersonal.Models;
 
-namespace ShopPhone.Models
+namespace WebsitePersonal.Models
 {
     public class ApplicationDbContext : DbContext
     {

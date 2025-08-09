@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using WebsitePersonal.Models;
 
-namespace ShopPhone.Models
+namespace WebsitePersonal.Models
 {
     public class ChiTietDonHang
     {

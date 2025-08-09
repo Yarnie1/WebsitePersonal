@@ -1,4 +1,6 @@
-﻿namespace ShopPhone.Models
+﻿using System.Collections.Generic;
+
+namespace WebsitePersonal.Models
 {
     public class ProductFilterViewModel
     {

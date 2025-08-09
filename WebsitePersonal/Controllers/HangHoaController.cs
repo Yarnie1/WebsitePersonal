@@ -1,20 +1,18 @@
 ﻿// Đường dẫn: Controllers/SanPhamController.cs
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ShopPhone.Models;
-using ShopPhone.ViewModels;
+using WebsitePersonal.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 [Authorize]
 public class HangHoaController : Controller
 {
     private readonly ApplicationDbContext _context;
 
-    public HangHoaController(ApplicationDbContext context)
-    {
-        _context = context;
-    }
+    public HangHoaController(ApplicationDbContext context) => _context = context;
 
-    public IActionResult Index(string? tuKhoa, int? giaTu, int? giaDen)
+    public IActionResult Index(string tuKhoa, int? giaTu, int? giaDen)
     {
         var query = _context.HangHoa.AsQueryable();
 
@@ -54,9 +52,9 @@ public class HangHoaController : Controller
             GiamGia = hanghoa.GiamGia ?? 0,
             Hinh = hanghoa.Hinh,
             NgaySX = hanghoa.NgaySX,
-            SoLanXem = hanghoa.SoLanXem ?? 0,
+            SoLanXem = hanghoa.SoLanXem,
             MoTa = hanghoa.MoTa,
-            DanhGia = (float)(hanghoa.DanhGia ?? 0.0),
+            DanhGia = (float)(hanghoa.DanhGia),
             HinhMoHop = hanghoa.HinhMoHop,
             HinhThucTe = hanghoa.HinhThucTe,
             VideoId = hanghoa.VideoId

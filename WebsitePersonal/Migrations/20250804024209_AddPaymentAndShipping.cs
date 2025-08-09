@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 
 #nullable disable
 
 #pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
 
-namespace ShopPhone.Migrations
+namespace WebsitePersonal.Migrations
 {
     /// <inheritdoc />
     public partial class AddPaymentAndShipping : Migration

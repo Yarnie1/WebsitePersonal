@@ -4,11 +4,15 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using ShopPhone.Models;
-using ShopPhone.Services;
+using WebsitePersonal.Models;
+using WebsitePersonal.Services;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
+using System.Threading.Tasks;
 
-namespace ShopPhone.Controllers
+namespace WebsitePersonal.Controllers
 {
     public class AccountController : Controller
     {
@@ -28,7 +32,7 @@ namespace ShopPhone.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> Login(Login model, string? returnUrl)
+        public async Task<IActionResult> Login(Login model, string returnUrl)
         {
             if (!ModelState.IsValid)
                 return View("~/Views/account/Login.cshtml");
@@ -194,12 +198,9 @@ namespace ShopPhone.Controllers
         public IActionResult ResetPassword() => View();
 
         [HttpPost]
-        public async Task<IActionResult> ResetPassword(string password)
+        public IActionResult ResetPassword(string password)
         {
             string email = TempData["Email"] as string;
-
-            // TODO: Tìm user theo email, cập nhật mật khẩu mới (nên hash)
-
             TempData["Success"] = "Mật khẩu đã được cập nhật!";
             return RedirectToAction("Login", "Account");
         }

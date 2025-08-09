@@ -1,13 +1,17 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using ShopPhone.Models;
-using ShopPhone.Services;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using WebsitePersonal.Models;
+using WebsitePersonal.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Thêm dịch vụ DbContext với connection string từ appsettings.json
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ShopPhoneConnection")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("WebsitePersonalConnection")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();

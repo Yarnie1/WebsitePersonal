@@ -1,4 +1,4 @@
-﻿namespace ShopPhone.Models
+﻿namespace WebsitePersonal.Models
 {
     public class CapNhatSoLuongVM
     {

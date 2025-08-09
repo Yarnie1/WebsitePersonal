@@ -1,7 +1,9 @@
-﻿using System.Net;
+﻿using Microsoft.Extensions.Configuration;
+using System.Net;
 using System.Net.Mail;
+using System.Threading.Tasks;
 
-namespace ShopPhone.Services
+namespace WebsitePersonal.Services
 {
     public class EmailSender
     {

@@ -1,6 +1,7 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace ShopPhone.Models
+namespace WebsitePersonal.Models
 {
     public class ThongTinGiaoHang
     {
@@ -21,21 +22,21 @@ namespace ShopPhone.Models
         public string DiaChi { get; set; } = string.Empty;
 
         [StringLength(100)]
-        public string? TinhThanh { get; set; }
+        public string TinhThanh { get; set; }
 
         [StringLength(100)]
-        public string? QuanHuyen { get; set; }
+        public string QuanHuyen { get; set; }
 
         [StringLength(500)]
-        public string? GhiChu { get; set; }
+        public string GhiChu { get; set; }
 
         public DateTime NgayGiaoDuKien { get; set; }
 
-        public string? MaVanDon { get; set; }
+        public string MaVanDon { get; set; }
 
         public string TrangThaiGiaoHang { get; set; } = "Chờ xử lý";
 
         // Navigation property
-        public DonHang? DonHang { get; set; }
+        public DonHang DonHang { get; set; }
     }
 }

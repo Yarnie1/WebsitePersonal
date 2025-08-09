@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ShopPhone.Models;
+using WebsitePersonal.Models;
 
 #nullable disable
 
-namespace ShopPhone.Migrations
+namespace WebsitePersonal.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -22,7 +22,7 @@ namespace ShopPhone.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("ShopPhone.Models.ChiTietDonHang", b =>
+            modelBuilder.Entity("WebsitePersonal.Models.ChiTietDonHang", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -66,7 +66,7 @@ namespace ShopPhone.Migrations
                     b.ToTable("ChiTietDonHang");
                 });
 
-            modelBuilder.Entity("ShopPhone.Models.DonHang", b =>
+            modelBuilder.Entity("WebsitePersonal.Models.DonHang", b =>
                 {
                     b.Property<int>("DonHangId")
                         .ValueGeneratedOnAdd()
@@ -123,7 +123,7 @@ namespace ShopPhone.Migrations
                     b.ToTable("DonHang");
                 });
 
-            modelBuilder.Entity("ShopPhone.Models.GioHangChiTietDb", b =>
+            modelBuilder.Entity("WebsitePersonal.Models.GioHangChiTietDb", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -164,7 +164,7 @@ namespace ShopPhone.Migrations
                     b.ToTable("GioHangChiTietDb");
                 });
 
-            modelBuilder.Entity("ShopPhone.Models.GioHangDb", b =>
+            modelBuilder.Entity("WebsitePersonal.Models.GioHangDb", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -186,7 +186,7 @@ namespace ShopPhone.Migrations
                     b.ToTable("GioHangDb");
                 });
 
-            modelBuilder.Entity("ShopPhone.Models.HangHoa", b =>
+            modelBuilder.Entity("WebsitePersonal.Models.HangHoa", b =>
                 {
                     b.Property<int>("MaHH")
                         .ValueGeneratedOnAdd()
@@ -246,7 +246,7 @@ namespace ShopPhone.Migrations
                     b.ToTable("HangHoa");
                 });
 
-            modelBuilder.Entity("ShopPhone.Models.LienHe", b =>
+            modelBuilder.Entity("WebsitePersonal.Models.LienHe", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -277,7 +277,7 @@ namespace ShopPhone.Migrations
                     b.ToTable("LienHe");
                 });
 
-            modelBuilder.Entity("ShopPhone.Models.PhuongThucGiaoHang", b =>
+            modelBuilder.Entity("WebsitePersonal.Models.PhuongThucGiaoHang", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -328,7 +328,7 @@ namespace ShopPhone.Migrations
                         });
                 });
 
-            modelBuilder.Entity("ShopPhone.Models.PhuongThucThanhToan", b =>
+            modelBuilder.Entity("WebsitePersonal.Models.PhuongThucThanhToan", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -394,7 +394,7 @@ namespace ShopPhone.Migrations
                         });
                 });
 
-            modelBuilder.Entity("ShopPhone.Models.TaiKhoan", b =>
+            modelBuilder.Entity("WebsitePersonal.Models.TaiKhoan", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -429,7 +429,7 @@ namespace ShopPhone.Migrations
                     b.ToTable("TaiKhoan");
                 });
 
-            modelBuilder.Entity("ShopPhone.Models.TheTinDung", b =>
+            modelBuilder.Entity("WebsitePersonal.Models.TheTinDung", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -501,7 +501,7 @@ namespace ShopPhone.Migrations
                         });
                 });
 
-            modelBuilder.Entity("ShopPhone.Models.ThongTinGiaoHang", b =>
+            modelBuilder.Entity("WebsitePersonal.Models.ThongTinGiaoHang", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -557,15 +557,15 @@ namespace ShopPhone.Migrations
                     b.ToTable("ThongTinGiaoHang");
                 });
 
-            modelBuilder.Entity("ShopPhone.Models.ChiTietDonHang", b =>
+            modelBuilder.Entity("WebsitePersonal.Models.ChiTietDonHang", b =>
                 {
-                    b.HasOne("ShopPhone.Models.DonHang", "DonHang")
+                    b.HasOne("WebsitePersonal.Models.DonHang", "DonHang")
                         .WithMany("ChiTietDonHang")
                         .HasForeignKey("DonHangId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ShopPhone.Models.HangHoa", "HangHoa")
+                    b.HasOne("WebsitePersonal.Models.HangHoa", "HangHoa")
                         .WithMany()
                         .HasForeignKey("MaHH")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -576,13 +576,13 @@ namespace ShopPhone.Migrations
                     b.Navigation("HangHoa");
                 });
 
-            modelBuilder.Entity("ShopPhone.Models.DonHang", b =>
+            modelBuilder.Entity("WebsitePersonal.Models.DonHang", b =>
                 {
-                    b.HasOne("ShopPhone.Models.PhuongThucGiaoHang", "PhuongThucGiaoHang")
+                    b.HasOne("WebsitePersonal.Models.PhuongThucGiaoHang", "PhuongThucGiaoHang")
                         .WithMany()
                         .HasForeignKey("PhuongThucGiaoHangId");
 
-                    b.HasOne("ShopPhone.Models.PhuongThucThanhToan", "PhuongThucThanhToan")
+                    b.HasOne("WebsitePersonal.Models.PhuongThucThanhToan", "PhuongThucThanhToan")
                         .WithMany()
                         .HasForeignKey("PhuongThucThanhToanId");
 
@@ -591,15 +591,15 @@ namespace ShopPhone.Migrations
                     b.Navigation("PhuongThucThanhToan");
                 });
 
-            modelBuilder.Entity("ShopPhone.Models.GioHangChiTietDb", b =>
+            modelBuilder.Entity("WebsitePersonal.Models.GioHangChiTietDb", b =>
                 {
-                    b.HasOne("ShopPhone.Models.GioHangDb", "GioHang")
+                    b.HasOne("WebsitePersonal.Models.GioHangDb", "GioHang")
                         .WithMany("ChiTietGioHang")
                         .HasForeignKey("GioHangDbId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ShopPhone.Models.HangHoa", "HangHoa")
+                    b.HasOne("WebsitePersonal.Models.HangHoa", "HangHoa")
                         .WithMany()
                         .HasForeignKey("MaHH")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -610,25 +610,25 @@ namespace ShopPhone.Migrations
                     b.Navigation("HangHoa");
                 });
 
-            modelBuilder.Entity("ShopPhone.Models.ThongTinGiaoHang", b =>
+            modelBuilder.Entity("WebsitePersonal.Models.ThongTinGiaoHang", b =>
                 {
-                    b.HasOne("ShopPhone.Models.DonHang", "DonHang")
+                    b.HasOne("WebsitePersonal.Models.DonHang", "DonHang")
                         .WithOne("ThongTinGiaoHang")
-                        .HasForeignKey("ShopPhone.Models.ThongTinGiaoHang", "DonHangId")
+                        .HasForeignKey("WebsitePersonal.Models.ThongTinGiaoHang", "DonHangId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("DonHang");
                 });
 
-            modelBuilder.Entity("ShopPhone.Models.DonHang", b =>
+            modelBuilder.Entity("WebsitePersonal.Models.DonHang", b =>
                 {
                     b.Navigation("ChiTietDonHang");
 
                     b.Navigation("ThongTinGiaoHang");
                 });
 
-            modelBuilder.Entity("ShopPhone.Models.GioHangDb", b =>
+            modelBuilder.Entity("WebsitePersonal.Models.GioHangDb", b =>
                 {
                     b.Navigation("ChiTietGioHang");
                 });

@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace ShopPhone.Models
+namespace WebsitePersonal.Models
 {
     public class PhuongThucGiaoHang
     {
@@ -11,8 +11,8 @@ namespace ShopPhone.Models
         public string Ten { get; set; } = string.Empty;
 
         [StringLength(500)]
-        public string? MoTa { get; set; }
-
+        public string MoTa { get; set; }
+            
         public decimal PhiGiaoHang { get; set; } = 0;
 
         public bool HoatDong { get; set; } = true;

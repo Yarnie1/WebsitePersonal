@@ -1,7 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Http;
+using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ShopPhone.Models
+namespace WebsitePersonal.Models
 {
     public class HangHoa
     {
@@ -11,7 +13,7 @@ namespace ShopPhone.Models
         [Required(ErrorMessage = "Tên sản phẩm không được để trống")]
         public string TenHH { get; set; }
 
-        public string? TenAlias { get; set; }
+        public string TenAlias { get; set; }
         public int MaLoai { get; set; }
         public string MoTaDonVi { get; set; }
 
@@ -19,30 +21,30 @@ namespace ShopPhone.Models
         public decimal? DonGia { get; set; }    // giá đã giảm
 
         public decimal? GiamGia { get; set; }    // % giảm
-        public string? Hinh { get; set; }
+        public string Hinh { get; set; }
 
         [Required(ErrorMessage = "Vui lòng chọn ngày sản xuất")]
         [DataType(DataType.Date)]
         public DateTime NgaySX { get; set; }
 
-        public int? SoLanXem { get; set; }
-        public string? MoTa { get; set; }
-        public string? MaNCC { get; set; }
-        public double? DanhGia { get; set; }
-        public string? HinhMoHop { get; set; }
-        public string? HinhThucTe { get; set; }
-        public string? VideoId { get; set; }
+        public int SoLanXem { get; set; }
+        public string MoTa { get; set; }
+        public string MaNCC { get; set; }
+        public double DanhGia { get; set; }
+        public string HinhMoHop { get; set; }
+        public string HinhThucTe { get; set; }
+        public string VideoId { get; set; }
 
         /* ---------- Thuộc tính tính toán ---------- */
 
         [NotMapped]
-        public IFormFile? FileHinh { get; set; }
+        public IFormFile FileHinh { get; set; }
 
         [NotMapped]
-        public IFormFile? FileHinhMoHop { get; set; }
+        public IFormFile FileHinhMoHop { get; set; }
 
         [NotMapped]
-        public IFormFile? FileHinhThucTe { get; set; }
+        public IFormFile FileHinhThucTe { get; set; }
 
         /// <summary>Giá gốc suy ngược từ DonGia và % giảm.</summary>
         [NotMapped]

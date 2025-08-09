@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ShopPhone.Views
+namespace WebsitePersonal.Views
 {
     public class ResetPasswordViewModel
     {

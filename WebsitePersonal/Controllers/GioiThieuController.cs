@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace ShopPhone.Controllers
+namespace WebsitePersonal.Controllers
 {
     public class GioiThieuController : Controller
     {

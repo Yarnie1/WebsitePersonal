@@ -1,4 +1,6 @@
-﻿namespace ShopPhone.ViewModels
+﻿using System;
+
+namespace WebsitePersonal.Models
 {
     public class ProductDetailViewModel
     {

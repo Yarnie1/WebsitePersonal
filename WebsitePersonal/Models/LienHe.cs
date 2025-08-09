@@ -1,6 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
-namespace ShopPhone.Models
+namespace WebsitePersonal.Models
 {
     public class LienHe
     {
@@ -17,6 +18,6 @@ namespace ShopPhone.Models
         public string NoiDung { get; set; }
 
         public DateTime NgayGui { get; set; } = DateTime.Now;
-        public string? UserId { get; set; }
+        public string UserId { get; set; }
     }
 }

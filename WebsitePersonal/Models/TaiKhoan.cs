@@ -1,6 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Microsoft.AspNetCore.Http;
+using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ShopPhone.Models
+namespace WebsitePersonal.Models
 {
     public class TaiKhoan
     {
@@ -13,8 +15,8 @@ namespace ShopPhone.Models
         public string HoTen { get; set; } = null!;
 
         [NotMapped]
-        public IFormFile? FileAnhDaiDien { get; set; }
+        public IFormFile FileAnhDaiDien { get; set; }
 
-        public string? AnhDaiDien { get; set; }
+        public string AnhDaiDien { get; set; }
     }
 }

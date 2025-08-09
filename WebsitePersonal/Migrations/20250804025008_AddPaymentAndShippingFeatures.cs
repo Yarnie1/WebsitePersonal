@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 
 #nullable disable
 
-namespace ShopPhone.Migrations
+namespace WebsitePersonal.Migrations
 {
     /// <inheritdoc />
     public partial class AddPaymentAndShippingFeatures : Migration

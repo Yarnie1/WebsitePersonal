@@ -1,4 +1,8 @@
-﻿namespace ShopPhone.Models
+﻿using WebsitePersonal.Models;
+using System;
+using System.Collections.Generic;
+
+namespace WebsitePersonal.Models
 {
     public class DonHang
     {
@@ -8,7 +12,7 @@
 
         public int TaiKhoanId { get; set; }
 
-        public string? TenDangNhap { get; set; }
+        public string TenDangNhap { get; set; }
 
         public DateTime NgayDat { get; set; }
 
@@ -19,8 +23,8 @@
         // Thông tin thanh toán
         public int? PhuongThucThanhToanId { get; set; }
 
-        public string? MaGiaoDich { get; set; }
-        public string? TrangThaiThanhToan { get; set; } = "Chưa thanh toán";
+        public string MaGiaoDich { get; set; }
+        public string TrangThaiThanhToan { get; set; } = "Chưa thanh toán";
         public DateTime? NgayThanhToan { get; set; }
 
         // Thông tin giao hàng
@@ -30,10 +34,10 @@
         public decimal TongTienSauPhiGiaoHang { get; set; }
 
         // Navigation properties
-        public PhuongThucThanhToan? PhuongThucThanhToan { get; set; }
+        public PhuongThucThanhToan PhuongThucThanhToan { get; set; }
 
-        public PhuongThucGiaoHang? PhuongThucGiaoHang { get; set; }
-        public ThongTinGiaoHang? ThongTinGiaoHang { get; set; }
+        public PhuongThucGiaoHang PhuongThucGiaoHang { get; set; }
+        public ThongTinGiaoHang ThongTinGiaoHang { get; set; }
         public List<ChiTietDonHang> ChiTietDonHang { get; set; } = new();
     }
 }
